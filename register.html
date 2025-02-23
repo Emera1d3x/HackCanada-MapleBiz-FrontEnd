@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maple Biz</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" href="Logo.png" type="image/ico">
+    <script src="productProcessing.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <div class="nav-buttons">
+                <a href="register.html"><button class="nav-btn">REGISTER</button></a>
+                <a href="index.html#aboutUs"><button class="nav-btn">ABOUT</button></a>
+            </div>
+        </nav>
+        <header class="hero">
+            <div class="card">
+                <h1 class="title">REGISTRATION</h1>
+                <div class="generalInformation">
+                    GENERAL INFORMATION
+                    <div class="input-group">
+                        <label>BUSINESS NAME:</label>
+                        <input style="color: black; font-family: RCBFont;" type="text" placeholder="YourCompany Inc.">
+                    </div>
+                    <div class="input-group">
+                        <label>EMAIL ADDRESS:</label>
+                        <input style="color: black; font-family: RCBFont;" type="text" placeholder="buddy@yourcompany.com">
+                    </div>
+                    <div class="input-group">
+                        <label>LOCATION:</label>
+                        <input style="color: black; font-family: RCBFont;" type="text" placeholder="123 Avenue">
+                    </div>
+                </div>
+                <div class="generalInformation">
+                    PRODUCTS SOLD
+                    <div class="input-groupFile">
+                        <label class="labelFileAdder">
+                            UPLOAD .XLS OR .CSV DATABASE:
+                        </label>
+                        <input type="file" id="fileUpload" class="file-input" accept=".xls,.xlsx,.csv">
+                        <div class="clearbuttonwrapper">
+                            <button id="clearFile" class="clear-button">CLEAR FILE</button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>ADD ITEM:</label>
+                        <input style="color: rgb(4, 0, 23); font-family: RCBFont;" id="product-name" type="text" placeholder="Product">
+                        <label>ADD COST: $</label>
+                        <input style="color: rgb(4, 0, 23); font-family: RCBFont;" id="product-cost" type="number" placeholder="Cost" min="0.00" max="10000.00" step="0.01">
+                        <button id="add-product" class="add-btn"><image class="addbutton" src="addProduct.png"></button>
+                    </div>
+                    <table class="product-table" id="pt">
+                        <thead >
+                            <tr>
+                                <th style="width:33%; text-decoration: underline; color: #ffc0cb;">Product</th>
+                                <th style="width:33%; text-decoration: underline; color: #ffc0cb;">Cost</th>
+                                <th style="width:33%; text-decoration: underline; color: #ffc0cb;">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <button id="submit-btn" class="submit-btn">SUBMIT</button>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

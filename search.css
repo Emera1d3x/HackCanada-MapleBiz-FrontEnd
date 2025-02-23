@@ -1,0 +1,265 @@
+@font-face {
+    font-family: headingFont;
+    src: url(lilita-one-v15-latin-regular.woff2);
+}
+@font-face {
+    font-family: RCBFont;
+    src: url(Roboto-Condensed-Bold.woff2);
+}
+html{
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #082757;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #0e408b;
+    border-radius: 5%;
+}
+::placeholder{
+    color: #000000;
+    font-weight: lighter;
+    opacity: 0.5;
+}
+body {
+    background: radial-gradient(#00204e, #050616);
+    font-family: headingFont, cursive;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.main-container{
+    height: 100vh;
+    z-index: -2;
+}
+.logo-container{
+    padding-left: 20px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    z-index: 1;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+.nav-buttons {
+    color: #ffa4c2;
+    border: none;
+    margin: 5px;
+    height: 10vh;
+    font-size: 100%;
+    font-size: 4vh;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: headingFont;
+    transition: transform 0.1s ease-in-out;
+}
+
+.nav-btn-selected {
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    color: #f71f67;
+    border: none;
+    margin: 5px;
+    height: 10vh;
+    font-size: 100%;
+    font-size: 4vh;
+    cursor: pointer;
+    margin-right:15px;
+    border-radius: 10px;
+    font-family: headingFont;
+    transition: all 1s ease-in-out;
+    text-decoration: underline;
+    
+}
+
+.nav-btn {
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    color: #f71f67;
+    border: none;
+    margin: 5px;
+    height: 10vh;
+    font-size: 100%;
+    font-size: 4vh;
+    cursor: pointer;
+    margin-right:15px;
+    border-radius: 10px;
+    font-family: headingFont;
+    transition: all 1s ease-in-out;
+}
+
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f71f67;
+    transition: transform 0.25s ease-out;
+}
+  
+.nav-btn:hover::after {
+    transform: scaleX(1);
+}
+
+
+.navbar {
+    height: 20vh;
+    background-size: 200px auto;
+    background-repeat: repeat;
+}
+
+.logo{
+    height: 20vh;
+    transition: transform 0.1s ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.hero{
+    height: 100vh;
+}
+.card{
+    background-color: #0d0331;
+    border-radius: 50px;
+    margin: 15px 10vw 0px 10vw;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+  
+.card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #00f2ff, #14c2e9, #0c57bf, #14c2e9, #00f2ff);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 50px;
+    animation: 3s spin linear infinite;
+}
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+}
+
+.title {
+    font-size: 4.5rem;
+    margin: 0px 0;
+    z-index: 5;
+    animation: titleColourChange 4s infinite;
+    transition: all 0.5s;
+    background: linear-gradient(-45deg, #ff0084, #ff4242, #ff0084, #ff4242);
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+
+	background-clip: text;
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+	color: transparent;
+}
+@keyframes gradient{
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.card-top{
+    color: #fabacf;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    font-size: 4vh;
+}
+.cardRight{
+    justify-self: flex-end;
+    text-align: right;
+}
+.cardLeft{
+    justify-self: flex-start;
+    text-align: left;
+}
+
+.company-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.company-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.company-info {
+    font-family: RCBFont;
+    text-align: left;
+}
+
+.company-name{
+    margin-left: 6vw;
+    margin-top: 0;
+    font-size: 5vh;
+    margin-bottom: 0;
+}
+
+.company-information{
+    margin-left: 6vw;
+    font-size: 3.5vh;
+    opacity: 0.5;
+}
+
+.price-tag {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 7vh;
+    margin-right: 25px;
+}
